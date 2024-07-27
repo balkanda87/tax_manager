@@ -1,0 +1,9 @@
+fastapi
+fastapi-cli
+uvicorn
+SQLAlchemy
+PyJWT
+boto3
+urllib3
+pyOpenSSL
+psycopg[binary,pool]

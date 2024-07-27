@@ -1,0 +1,10 @@
+{
+    "tax_manager_api" : {
+        "logfilepath" : "C:\\Users\\Balaji Kandasamy\\Documents\\tax_manager_api.log",
+        "secret_key" : "this_is_a_secert_key",
+        "algorithm" : "HS256",
+        "access_token_expire_minutes" : 15,
+        "refresh_token_expire_days" : 10,
+        "db_url" : "postgresql://postgres:postgres@localhost:5432/postgres"
+    }
+}
