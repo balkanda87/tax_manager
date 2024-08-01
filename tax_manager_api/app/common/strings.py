@@ -115,3 +115,41 @@ class HttpServerErrorMessage:
     NETWORK_AUTHENTICATION_REQUIRED = (
         "Indicates that the client needs to authenticate to gain network access."
     )
+
+
+@dataclass(frozen=True)
+class UserMessage:
+    """dataclass UserMessage contains for User string Message."""
+
+    USER_REGISTERED_SUCCESSFULLY = "User registered successfully"
+    USER_LOGGED_OUT_SUCCESSFULLY = "Logged out successfully"
+    USER_PROTECTED_ACCESS = "Protected data accessed"
+    USER_LOGGED_IN_SUCCESSFULLY = "Login Successful"
+
+
+@dataclass(frozen=True)
+class UserErrorMessage:
+    """dataclass UserErrorMessage contains for User error string Message."""
+
+    USER_ALREADY_REGISTERED = "Email already registered"
+    USER_INCORRECT_USER_OR_PASSWORD = "Incorrect username or password"
+    USER_INVALID_AUTHENTICATION_SCHEME = "Invalid authentication scheme"
+    USER_INVALID_AUTHENTICATION_HEADER = "Invalid authorization header"
+
+
+@dataclass(frozen=True)
+class TokenMessage:
+    """dataclass TokenMessage contains for Token string Message."""
+
+    TOKEN_SENT_SUCCESSFULLY = "Token sent successfully"
+
+
+@dataclass(frozen=True)
+class TokenErrorMessage:
+    """dataclass TokenErrorMessage contains for Token error string Message."""
+
+    TOKEN_EXPIRED = "Token has expired"
+    TOKEN_INVALID = "Invalid token"
+    TOKEN_BLACKLISTED = "Token is blacklisted"
+    TOKEN_ALREADY_BLACKLISTED = "Token already blacklisted"
+    TOKEN_EXPIRED_TYPE_REFRESH = "Refresh token has expired"

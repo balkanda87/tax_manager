@@ -1,9 +1,11 @@
+bcrypt==4.0.1
+boto3
 fastapi
 fastapi-cli
 uvicorn
 SQLAlchemy
 PyJWT
-boto3
 urllib3
+passlib
 pyOpenSSL
-psycopg[binary,pool]
+psycopg2

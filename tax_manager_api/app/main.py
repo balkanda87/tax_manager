@@ -8,8 +8,11 @@ __maintainer__ = "someone"
 __email__ = "balkanda87@outlook.com"
 
 from fastapi import FastAPI
+from app.routers.users import users
 
 app = FastAPI()
+
+app.include_router(users)
 
 if __name__ == "__main__":
     import uvicorn

@@ -7,38 +7,38 @@ __version__ = "1.0.0"
 __maintainer__ = "someone"
 __email__ = "balkanda87@outlook.com"
 
-from pydantic import BaseModel
-from typing import List, Optional
+from uuid import uuid4
+from fastapi import APIRouter, Depends, HTTPException
+from pydantic import BaseModel, Field
+from typing import Optional
+
+
+users = APIRouter()
 
 
 # Example database models (use SQLAlchemy or your preferred ORM)
-class User(BaseModel):
-    user_id: int
+class UserLogin(BaseModel):
+    # id: Optional[int] = Field(default_factory=lambda: uuid4().hex)
     username: str
-    email: str
-    hashed_password: str
+    role: str
+    password: str
 
 
 class UserProfile(BaseModel):
-    user_details_id: int
-    user_id: int
+    # id: Optional[int] = Field(default_factory=lambda: uuid4().hex)
     username: str
+    hashed_password: str
+    email: str
     first_name: str
     last_name: str
     mobile_number: str
-    pan_id: str
-    aadhar_id: str
-    uan_id: str
-    profile_image: bytes
+    pan_id: Optional[str] = None
+    aadhar_id: Optional[str] = None
+    uan_id: Optional[str] = None
+    profile_image: Optional[bytes] = None
 
 
-class UserRole(BaseModel):
-    user_role_id: int
-    user_id: int
-    user_role: str
-
-
-class Token(BaseModel):
+class TokenData(BaseModel):
     token_id: int
     user_id: int
     token_type: str
@@ -46,20 +46,12 @@ class Token(BaseModel):
     expiration_time: str
 
 
-class RefreshToken(BaseModel):
-    refresh_token_id: int
-    user_id: int
-    token: str
-    expiration_time: str
-
-
 class PasswordHistory(BaseModel):
-    user_id: int
     hashed_password: str
     last_updated: str
 
 
-class BlackList(BaseModel):
+class BlackListData(BaseModel):
     token_id: int
     blacklisted_at: str
 

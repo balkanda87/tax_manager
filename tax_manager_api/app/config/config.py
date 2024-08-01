@@ -21,7 +21,7 @@ class Config:
 
         # def fetch_config_params(self):
         with open(
-            os.getcwd() + "/tax_manager_api/config/tax_config.json",
+            os.getcwd() + "/tax_manager_api/app/config/tax_config.json",
             "r",
             encoding="utf-8",
         ) as tax_config:
